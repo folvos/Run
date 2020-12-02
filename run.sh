@@ -1,15 +1,11 @@
 #! /bin/bash
 printf "Installing Remote server... " >&2
 {
-sed -i 's/\/bin\/sh/\/bin\/bash/g' /etc/passwd
-sudo apt-get update
 wget https://dl.google.com/linux/direct/chrome-remote-desktop_current_amd64.deb
 sudo dpkg --install chrome-remote-desktop_current_amd64.deb
 sudo apt install --assume-yes --fix-broken
-sudo DEBIAN_FRONTEND=noninteractive \
 sudo bash -c 'echo "exec /etc/X11/Xsession /usr/bin/xfce4-session" > /etc/chrome-remote-desktop
 session'  
-sudo systemctl disable lightdm.service
 sudo apt install --assume-yes --fix-broken
 sudo apt install nautilus nano -y 
 sudo adduser ALOK chrome-remote-desktop
