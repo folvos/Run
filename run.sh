@@ -1,5 +1,5 @@
 #! /bin/bash
-printf "Installing RDP Be Patience... " >&2
+printf "Installing Remote server... " >&2
 {
 sed -i 's/\/bin\/sh/\/bin\/bash/g' /etc/passwd
 sudo apt-get update
